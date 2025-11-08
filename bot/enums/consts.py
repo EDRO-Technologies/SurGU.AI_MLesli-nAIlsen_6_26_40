@@ -1,0 +1,5 @@
+START_MESSAGE = "Привет"
+PROFILE = "Профиль"
+MINI_APP = "Приложение"
+COURSES = "Курсы"
+TEST = "Пройти тест"
