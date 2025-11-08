@@ -43,16 +43,12 @@ class Base(DeclarativeBase):
 class Users(Base):
     __tablename__ = "users"
 
-    id: Mapped[int] = mapped_column(primary_key=True, comment="Айди в системе")
-    username: Mapped[str] = mapped_column(nullable=False, unique=True)
-    password: Mapped[str] = mapped_column(nullable=False, comment="Хешированный пароль пользователя")
-    first_name: Mapped[str] = mapped_column(nullable=False)
-    last_name: Mapped[str] = mapped_column(nullable=False)
-    age: Mapped[int] = mapped_column(nullable=False)
-    email: Mapped[str] = mapped_column(unique=True)
+    telegram_id: Mapped[int] = mapped_column(primary_key=True, nullable=False, unique=True)
+    first_name: Mapped[str] = mapped_column(nullable=True)
+    last_name: Mapped[str] = mapped_column(nullable=True)
+    email: Mapped[str] = mapped_column(unique=True, nullable=True)
     phone: Mapped[str] = mapped_column(unique=True, nullable=True)
     role: Mapped[str] = mapped_column(comment="Роль участника в системе")
-    success_in_a_row: Mapped[int] = mapped_column(default=0, comment="Верно решено задач подряд без ошибок")
 
     @classmethod
     async def create_table(cls):
