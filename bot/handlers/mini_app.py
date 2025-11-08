@@ -6,13 +6,14 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
 
 from bot.enums import consts
 from bot.keyboards import menu
-from bot.middleware.register import Register
+from database.methods import UserMethods
 
 router = Router()
-router.message.middleware(Register())
 
 @router.message(CommandStart())
 async def cmd_menu(message: Message):
+    if UserMethods.user_is_exists():
+        UserMethods.add_user(message.from_user)
     await message.answer(text=consts.START_MESSAGE, reply_markup=menu.get_keyboard())
 
 @router.message(F.data == 'profile')
@@ -30,4 +31,6 @@ async def download_document(message: Message, state: FSMContext):
     await state.set_state()
     file_id = message.document.file_id
     file = await message.bot.get_file(file_id)
-    await message.bot.download_file(file_path=file.file_path, destination="temp/")
+    download_path = f"temp/{file.file_path.split('/')[-1]}"
+    await message.bot.download_file(file_path=file.file_path, destination=download_path)
+    await message.answer(f"Файл сохранен как {download_path}")
