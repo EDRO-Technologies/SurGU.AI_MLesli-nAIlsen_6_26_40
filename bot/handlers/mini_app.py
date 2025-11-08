@@ -11,7 +11,7 @@ router = Router()
 
 @router.message(CommandStart())
 async def cmd_menu(message: Message):
-    await message.answer(text="123")
+    await message.answer(text="123", reply_markup=menu.get_keyboard())
 
 
 @router.message(F.data == 'profile')
