@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Bot</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="guide.css" />
+    <link rel="stylesheet" href="anim.css" />
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="content">
+                <!-- Профиль пользователя -->
+                <div class="user-profile">
+                    <div class="avatar-container">
+                        <img id="user-avatar" src="https://via.placeholder.com/100" alt="Аватар пользователя" class="avatar">
+                    </div>
+                    <div class="user-info">
+                        <h2 id="user-name">Имя пользователя</h2>
+                        <p id="user-username">@username</p>
+                    </div>
+                    <!-- Переключатель темы -->
+                    <div class="theme-toggle-container">
+                        <label class="theme-toggle" for="theme-toggle">
+                            <input type="checkbox" id="theme-toggle">
+                            <span class="theme-slider"></span>
+                            <div class="theme-icons"></div>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Статистика -->
+                <div class="stats-section">
+                    <h3>Статистика выполненных заданий</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="completed-tasks">0</div>
+                            <div class="stat-label">Выполнено заданий</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="success-rate">0%</div>
+                            <div class="stat-label">Успешность</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="rating">0</div>
+                            <div class="stat-label">Рейтинг</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Что умееет бот ?</h2>
+                <div class="rotating-text">
+                <p>
+                    <span class="word alizarin">Поможет подтянуть знания</span>
+                    <span class="word wisteria">Обучит новым навыкам </span>
+                    <span class="word peter-river">Станет для вас лучшим учителем</span>
+                    <span class="word emerald">Может помочь с учёбой</span>
+                </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>Контакты: example@email.com | Техническая поддержка: @support_username</p>
+            <p>© 2023 Название Бота. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <script src="index.js"></script>
+    <script src="anim.js"></script>
+</body>
+</html>
