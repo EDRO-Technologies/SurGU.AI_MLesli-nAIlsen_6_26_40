@@ -19,7 +19,7 @@ model = sdk.models.completions("yandexgpt")
 
 
 def preprocess_text(text: str):
-    return text.replace("\n", "").replace("```", "")
+    return text.replace("```", "")
 
 
 def get_answer_ai(lesson_name: str, desc: str, material: str, user_question: str, temp=0.5):
@@ -55,9 +55,10 @@ def generate_comp_profile(statistic: str, temp=0.5):
     model = model.configure(temperature=temp)
     ai_answer = model.run(
         f"Ты - AI-репетитор. \n"
-        f"Формат: Название области компетенции: уровень знаний, после каждой компетенции переносить на новую строку"
+        f"Формат: Название области компетенции: уровень знаний, после каждой компетенции переносить на новую строку. Разметка в виде html и тег только <b> ЗАКРЫВАЙ ВСЕ ТЕГИ КОРРЕКТНО. В начале не указывай ``` и тип текста. Добавляй смайлики строго по контексту.\n"
+        f"Условие: сгенерируй в красивом формате под response в телеграмм боте. В начале должна быть надпись 'Результат анализа Ваших тестов:' жирным шрифтом, потом уровень компетенций и ниже комментарии и направления для развития.\n"
         f"По нижеприведенным данным о результатах выполнения тестов по разным темам сгенерируй профиль компетенций: \n"+ statistic)
-    return ai_answer.alternatives[0].text
+    return preprocess_text(ai_answer.alternatives[0].text)
 
 def generate_theme_blocks(text: str, temp=0.5):
     global model

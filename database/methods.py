@@ -17,7 +17,6 @@ class UserMethods:
 
                 return SuccessResponse(status_code=200, data=dumped_model)
             except IntegrityError as e:
-                logger.error(e)
                 await session.rollback()
                 return FailedResponse(status_code=500, detail="Запись уже существует")
             except Exception as e:
@@ -25,7 +24,4 @@ class UserMethods:
                 await session.rollback()
                 return FailedResponse(status_code=500, detail="Произошла ошибка при выполнении")
 
-a = user_m.AddUserModel(telegram_id=2)
-b = UserMethods()
-result = asyncio.run(b.add_user(a))
-print(vars(result))
+
