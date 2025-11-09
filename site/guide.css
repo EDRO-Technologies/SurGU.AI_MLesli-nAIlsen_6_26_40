@@ -77,10 +77,6 @@ body.dark-theme .user-profile {
     border-left: 4px solid #4da6ff;
 }
 
-.avatar-container {
-    margin-right: 1.5rem;
-}
-
 .avatar {
     width: 80px;
     height: 80px;
@@ -295,38 +291,6 @@ body.dark-theme .no-students-message p {
     font-size: 0.9rem !important;
     font-style: italic;
     opacity: 0.8;
-}
-
-/* Стили для кнопки копирования ссылки */
-.copy-invite-link-btn {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
-}
-
-body.dark-theme .copy-invite-link-btn {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.4);
-}
-
-.copy-invite-link-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
-    background: linear-gradient(135deg, #218838 0%, #1e9e8a 100%);
-}
-
-.copy-invite-link-btn:active {
-    transform: translateY(0);
 }
 
 .btn-icon {

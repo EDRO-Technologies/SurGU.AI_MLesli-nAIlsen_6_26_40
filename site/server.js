@@ -8,10 +8,10 @@ const PORT = 3000;
 
 // Конфигурация подключения к базе данных
 const dbConfig = {
-    user: process.env.DB_USER || 'your_username',           // Имя пользователя БД
+    user: process.env.DB_USER || 'postgres',           // Имя пользователя БД
     host: process.env.DB_HOST || 'localhost',              // Хост БД
-    database: process.env.DB_NAME || 'your_database',      // Имя базы данных
-    password: process.env.DB_PASSWORD || 'your_password',  // Пароль БД
+    database: process.env.DB_NAME || 'new_learn',      // Имя базы данных
+    password: process.env.DB_PASSWORD || '11122233',  // Пароль БД
     port: process.env.DB_PORT || 5432,                    // Порт БД (по умолчанию 5432 для PostgreSQL)
     ssl: process.env.DB_SSL ? { rejectUnauthorized: false } : false // SSL опционально
 };
