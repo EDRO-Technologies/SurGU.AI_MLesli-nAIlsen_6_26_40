@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="guide.css" />
 </head>
 <body>
-    <!-- Остальной код остается без изменений -->
     <main>
         <div class="container">
             <div class="content">
@@ -36,6 +35,20 @@
                 <!-- Статистика -->
                 <div class="stats-section">
                     <h3>Статистика выполненных заданий</h3>
+                    <div class="no-students-message">
+                        <div class="message-header">
+                            <h3>Статистика учеников</h3>
+                            <button class="copy-invite-link-btn" onclick="copyInviteLink()">
+                                <span class="btn-icon">🔗</span>
+                                Ссылку для добавления учеников
+                            </button>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-icon">📊</div>
+                            <p>Пока что учеников нет или данные отсутствуют.</p>
+                            <p class="message-note">Поделитесь ссылкой-приглашением с учениками, чтобы они могли присоединиться</p>
+                        </div>
+                    </div>
                     <div class="stats-grid">
                         <div class="stat-card">
                             <div class="stat-value" id="completed-tasks">0</div>
@@ -43,16 +56,16 @@
                         </div>
                         <div class="stat-card">
                             <div class="stat-value" id="success-rate">0%</div>
-                            <div class="stat-label">Успешность</div>
+                            <div class="stat-label">Успеваемость</div>
                         </div>
-                        <div class="stat-card">
+                        <!--<div class="stat-card">
                             <div class="stat-value" id="rating">0</div>
-                            <div class="stat-label">Рейтинг</div>
-                        </div>
+                            <div class="stat-label">Средний балл</div>
+                        </div>-->
                     </div>
                 </div>
                 
-                <h2>Что умееет бот ?</h2>
+                <h2>Что умеет бот?</h2>
                 <div class="features-grid">
                     <!-- Карточки фич остаются без изменений -->
                     <div class="feature-card">
@@ -87,5 +100,6 @@
     </footer>
     
     <script src="index.js"></script>
+    <script src="server.js"></script>
 </body>
 </html>
