@@ -9,15 +9,18 @@ from bot.keyboards import menu
 from bot.fsm.states import Page, Analyzer, Parser
 from database.methods import UserMethods, UserCompMethods
 from database.response import FailedResponse
+from api.schemas.user_schema import AddUserModel
 
 router = Router()
 
 
 @router.message(Command(commands=["start", "menu"]))
 async def cmd_menu(message: Message):
-    # user = UserMethods()
-    # if await user.is_user_exists(telegram_id=message.from_user.id):
-    #     await user.add_user(message.from_user)
+    user = UserMethods()
+    model = AddUserModel(
+        telegram_id=message.from_user.id,
+    )
+    await user.add_user(AddUserModel(telegram_id=message.from_user.id))
     await message.answer(text=consts.START_MESSAGE, reply_markup=menu.get_start_keyboard(), parse_mode="html")
 
 
